@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main() {
+    printf("Playfair Cipher Message:\n\n");
+    printf("KXJEY UREBE ZWEHE WRYTU HEYFS\n");
+    printf("KREHE GOYFI WTTTU OLKSY CAJPO\n");
+    printf("BOTEI ZONTX BYBNT GONEY CUZWR\n");
+    printf("GDSON SXBOU YWRHE BAAHY USEDQ\n");
+    return 0;
+}
