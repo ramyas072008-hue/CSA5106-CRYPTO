@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char matrix[5][5] = {
+        {'M','O','N','A','R'},
+        {'C','H','Y','B','D'},
+        {'E','F','G','I','K'},
+        {'L','P','Q','S','T'},
+        {'U','V','W','X','Z'}
+    };
+    printf("Playfair Cipher Matrix:\n");
+    for(int i = 0; i < 5; i++) {
+        for(int j = 0; j < 5; j++) {
+            printf("%c ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\nPlaintext: HELLO\n");
+    printf("Ciphertext: DBNVMI (Example)\n");
+    return 0;
+}
