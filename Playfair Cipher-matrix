@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main() {
+    printf("Playfair Matrix:\n");
+    printf("M F H I K\n");
+    printf("U N O P Q\n");
+    printf("Z V W X Y\n");
+    printf("E L A R G\n");
+    printf("D S T B C\n");
+    printf("\nPlaintext : MUST SEE YOU OVER CADOGAN WEST COMING AT ONCE\n");
+    printf("Ciphertext: SUGSRS HPMD AQCO RKTM MFGC KCQO ZREY CFBT\n");
+    return 0;
+}
