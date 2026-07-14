@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+    char text[] = "MEETMEATTHEUSUALPLACEATTENRATHERTHANEIGHTOCLOCK";
+    int key[2][2] = {{9,4},{5,7}};
+    int i;
+    printf("Ciphertext: ");
+    for(i = 0; text[i] != '\0'; i += 2) {
+        int a = text[i] - 'A';
+        int b = text[i + 1] - 'A';
+        printf("%c", ((9 * a + 4 * b) % 26) + 'A');
+        printf("%c", ((5 * a + 7 * b) % 26) + 'A');
+    }
+    return 0;
+}
