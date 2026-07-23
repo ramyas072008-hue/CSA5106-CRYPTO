@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+char englishFreq[] = "ETAOINSHRDLCUMWFGYPBVKJXQZ";
+int main() {
+    char cipher[500];
+    int freq[26] = {0};
+    int i, j, top;
+    printf("Enter Cipher Text (Capital Letters Only):\n");
+    fgets(cipher, sizeof(cipher), stdin);
+    for(i = 0; cipher[i] != '\0'; i++) {
+        if(isalpha(cipher[i])) {
+            freq[toupper(cipher[i]) - 'A']++;
+        }
+    }
+    printf("\nTop 10 Possible Plaintexts:\n");
+    for(top = 0; top < 10; top++) {
+        int max = -1, index = -1;
+        for(i = 0; i < 26; i++) {
+            if(freq[i] > max) {
+                max = freq[i];
+                index = i;
+            }
+        }
+        if(index == -1)
+            break;
+        printf("\nGuess %d (Assuming %c -> %c):\n",
+               top + 1, 'A' + index, englishFreq[top]);
+        for(i = 0; cipher[i] != '\0'; i++) {
+            if(toupper(cipher[i]) == ('A' + index))
+                printf("%c", englishFreq[top]);
+            else
+                printf("%c", cipher[i]);
+        }
+        printf("\n");
+        freq[index] = -1;
+    }
+    return 0;
+}
