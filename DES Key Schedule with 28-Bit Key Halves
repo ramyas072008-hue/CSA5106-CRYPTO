@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main()
+{
+    int shift[16] = {1,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1};
+    int i;
+    printf("DES Key Generation Scheme\n");
+    printf("-------------------------\n\n");
+    printf("Initial 56-bit Key\n");
+    printf("      |\n");
+    printf("      V\n");
+    printf("Split into:\n");
+    printf("C0 = Left 28 bits\n");
+    printf("D0 = Right 28 bits\n\n");
+    printf("Round\tShift\tSubkey Generated\n");
+    printf("-------------------------------------\n");
+    for(i = 0; i < 16; i++)
+    {
+        printf("%2d\t%2d\tK%d (48 bits)\n",
+               i + 1, shift[i], i + 1);
+    }
+    printf("\nExplanation:\n");
+    printf("1. Divide the 56-bit key into two halves (C and D).\n");
+    printf("2. Left shift each half according to the DES shift schedule.\n");
+    printf("3. Apply Permuted Choice-2 (PC-2).\n");
+    printf("4. Generate a 48-bit subkey for each round.\n");
+    printf("5. The first 24 bits come from C half and\n");
+    printf("   the second 24 bits come from D half.\n");
+    return 0;
+}
