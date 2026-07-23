@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+void xorBlock(char input[], char key, char output[], int len)
+{
+    int i;
+    for(i = 0; i < len; i++)
+        output[i] = input[i] ^ key;
+}
+int main()
+{
+    char plaintext[100], block[100], cipher[100];
+    char key1 = 'K', key2 = 'L', key3 = 'M';
+    char IV = 'A';
+    int i, len;
+    printf("Enter Plaintext: ");
+    gets(plaintext);
+    len = strlen(plaintext)
+    for(i = 0; i < len; i++)
+        block[i] = plaintext[i] ^ IV;
+    xorBlock(block, key1, cipher, len);
+    xorBlock(cipher, key2, cipher, len);
+    xorBlock(cipher, key3, cipher, len);
+    printf("\nCipher Text (Hex): ");
+    for(i = 0; i < len; i++)
+        printf("%02X ", (unsigned char)cipher[i]);
+    printf("\n");
+    return 0;
+}
