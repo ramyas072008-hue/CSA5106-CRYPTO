@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("ECB and CBC Error Propagation\n");
+    printf("-----------------------------\n\n");
+
+    printf("ECB Mode:\n");
+    printf("If an error occurs in ciphertext block C1,\n");
+    printf("Only plaintext block P1 is affected.\n\n");
+
+    printf("CBC Mode:\n");
+    printf("If an error occurs in ciphertext block C1,\n");
+    printf("Plaintext blocks P1 and P2 are affected.\n");
+    printf("Blocks beyond P2 are NOT affected.\n\n");
+
+    printf("Question (a):\n");
+    printf("Are any blocks beyond P2 affected?\n");
+    printf("Answer: No. Only P1 and P2 are affected.\n\n");
+
+    printf("Question (b):\n");
+    printf("If there is a bit error in source plaintext block P1,\n");
+    printf("the error propagates to all subsequent ciphertext blocks\n");
+    printf("(C1, C2, C3, ...).\n");
+    printf("At the receiver, the decrypted plaintext from P1 onward\n");
+    printf("will be incorrect until the end of the message.\n");
+
+    return 0;
+}
